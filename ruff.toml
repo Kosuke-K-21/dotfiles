@@ -1,0 +1,61 @@
+line-length = 120
+indent-width = 4
+target-version = "py311"
+output-format = "grouped"
+
+[lint]
+select = [
+	"AIR",   # Airflow
+	"ASYNC", # flake8-async
+	"BLE",   # flake8-blind-except
+	"C4",    # flake8-comprehensions
+	"C90",   # mccabe
+	"DTZ",   # flake8-datetimez
+	"E",     # pycodestyle
+	"F",     # Pyflakes
+	"FA",    # flake8-future-annotations
+	"FLY",   # flynt
+	"I",     # isort
+	"ICN",   # flake8-import-conventions
+	"INT",   # flake8-gettext
+	"NPY",   # NumPy-specific rules
+	"PL",    # Pylint
+	"PYI",   # flake8-pyi
+	"RSE",   # flake8-raise
+	"RUF",   # Ruff-specific rules
+	"S",     # flake8-bandit
+	"SLOT",  # flake8-slots
+	"T10",   # flake8-debugger
+	"TID",   # flake8-tidy-imports
+	"TRY",   # tryceratops
+	"UP",    # pyupgrade
+	"W",     # pycodestyle
+	"YTT",   # flake8-2020
+]
+ignore = [
+	"D103",
+	"D100",   # ignore missing docstring in module
+	"D102",   # ignore missing docstring in public method
+	"D104",   # ignore missing docstring in public package
+	"D105",   # ignore missing docstring in magic methods
+	"D107",   # ignore missing docstring in __init__ methods
+	"RUF001", # ignore ruff-specific rule for japanese comments
+	"RUF002", # ignore ruff-specific rule for japanese comments
+	"RUF003", # ignore ruff-specific rule for japanese comments
+	"TRY003", # allow long exception messages
+	"NPY002",
+	"BLE001", # allow bare except
+]
+
+isort = { combine-as-imports = true }
+mccabe = { max-complexity = 15 }
+
+
+[lint.pydocstyle]
+convention = "google"
+
+[format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
